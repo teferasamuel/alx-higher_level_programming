@@ -1,6 +1,6 @@
-#!/usr/bin/python3
+#!usr/bin/python3
 """
-This module is composed by a class that defines a Rectangle
+this module is composed by a class that defines a Rectangle
 """
 
 
@@ -8,24 +8,26 @@ class Rectangle:
     """ Class that defines a rectangle """
     def __init__(self, width=0, height=0):
         """ Method that initializes the instance
-        Args:
-            width: rectangle width
-            height: rectangle height
+            Args:
+                width: rectangle width
+                height: rectangle height
         """
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """ method that returns the value of the width
-        Returns:
-            rectangle width
+        """
+            Method that returns the value of the width
+            Returns:
+                rectangle width
         """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ method that defines the width
+        """
+            method that defines the width
             Args:
                 value: width
                 Raises:
@@ -40,7 +42,8 @@ class Rectangle:
 
     @property
     def height(self):
-        """ method that returns the value of the height
+        """
+            method that returns the value of the height
             Returns:
                 rectangle height
         """
@@ -48,12 +51,13 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """ method that defines the height
+        """
+            method that defines the height
             Args:
-            value: height
-            Raises:
-            TypeError: if height is not an integer
-            ValueError: if height is less than zero
+                value: height
+                Raises:
+                TypeError: if height is not an integer
+                ValueError: if height is less than zero
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -64,16 +68,27 @@ class Rectangle:
     def area(self):
         """ Method that calculates the Rectangle area
             Returns:
-            rectangle area
+                rectangle area
         """
         return self.width * self.height
 
     def perimeter(self):
-
         """ Method that calculates the Rectangle perimeter
             Returns:
-            rectangle perimeter
+                rectangle perimeter
         """
         if self.width == 0 or self.height == 0:
             return 0
         return (2 * self.width) + (2 * self.height)
+
+    def __str__(self):
+        """ Method that returns the Rectangle #
+            Returns:
+                str of the rectangle
+        """
+        rectangle = ""
+        if self.width == 0 or self.height == 0:
+            return rectangle
+        for i in range(self.height):
+            rectangle += ("#" * self.width) + "\n"
+        return rectangle[:-1]
