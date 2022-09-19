@@ -46,7 +46,7 @@ class Rectangle:
         return self.__height
 
     @height.setter
-        def height(self, value):
+    def height(self, value):
             """ method that defines the height
                 Args:
                 value: height
@@ -59,18 +59,18 @@ class Rectangle:
             if value < 0:
                 raise ValueError("height must be >= 0")
             self.__height = value
-        def area(self):
-            """ Method that calculates the Rectangle area
-                Returns:
-                rectangle area
-            """
-            return self.width * self.height
-        def perimeter(self):
-            """ Method that calculates the Rectangle perimeter
-                Returns:
-                rectangle perimeter
-            """
-            if self.width == 0 or self.height == 0:
-                return 0
+    def area(self):
+        """ Method that calculates the Rectangle area
+            Returns:
+            rectangle area
+        """
+        return self.width * self.height
+    def perimeter(self):
+        """ Method that calculates the Rectangle perimeter
+            Returns:
+            rectangle perimeter
+        """
+        if self.width == 0 or self.height == 0:
+            return 0
         return (2 * self.width) + (2 * self.height)
 
