@@ -14,7 +14,7 @@ class Student:
 
     def to_json(self, attrs=None):
         """ Method that returns directory description """
-        obj = self.__dict__.copy()
+        obj = self.__dict__.copy() 
         if type(attrs) is list:
             for item in attrs:
                 if type(item) is not str:
@@ -24,5 +24,10 @@ class Student:
                 for satr in obj:
                     if attrs[iatr] == satr:
                         d_list[satr] = obj[satr]
-            return d_list
+            return d_lis
         return obj
+
+    def reload_from_json(self, json):
+        """ Replaces all attributes of the Student instance """
+        for atr in json:
+            self.__dict__[atr] = json[atr]
