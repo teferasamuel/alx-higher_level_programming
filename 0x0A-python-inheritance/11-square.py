@@ -3,7 +3,7 @@
 
 
 Rectangle = __import__('9-rectangle').Rectangle
-"""REctangle"""
+"""Square(Rectangle)"""
 
 
 class Square(Rectangle):
@@ -18,3 +18,7 @@ class Square(Rectangle):
     def area(self):
         """ Method that returns a string with the area """
         return super().area()
+
+    def __str__(self):
+        """ Special method that returns a printable string """
+        return "[Square] {}/{}".format(self.__size, self.__size)
